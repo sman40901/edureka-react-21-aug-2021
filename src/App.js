@@ -28,23 +28,46 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
   
 // }
 
+// class App extends Component{
+//   constructor(props){
+//     super(props);
+//     this.state = {liked:false};
+//   }
+
+//   handleClick=(event)=>{
+//     this.setState({liked:!this.state.liked});
+//   }
+
+//   render(){
+//     var text = this.state.liked ? 'like' : 'not lilke'
+//     return(
+//       <p onClick={this.handleClick}>
+//         your {text} this. click to toggle
+//       </p>
+//     );
+//   }
+// }
+
 class App extends Component{
-  constructor(props){
-    super(props);
-    this.state = {liked:false};
-  }
+    constructor(props){
+      super(props);
+      this.state = {
+        header:"Header from state",
+        content:"Content from state"
+      };
+    }
 
-  handleClick=(event)=>{
-    this.setState({liked:!this.state.liked});
-  }
-
-  render(){
-    var text = this.state.liked ? 'like' : 'not lilke'
-    return(
-      <p onClick={this.handleClick}>
-        your {text} this. click to toggle
-      </p>
-    );
-  }
+    render(){
+      return(
+        <div>
+          <h1>
+            {this.state.header}
+          </h1>
+          <h1>
+            {this.state.content}
+          </h1>
+        </div>
+      );
+    }
 }
 export default App;
